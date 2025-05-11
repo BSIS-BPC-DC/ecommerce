@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBSITE INFORMATION</title>
+    <style>
+body
+  {
+  background-image: url("https://i.pinimg.com/1200x/3c/de/32/3cde328cf88846c147531828e99056be.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+  display:flex;
+  flex-direction:column;
+  font-family: Roboto, Arial !important;
+}
+h1{
+  color: #fff;
+}
+.main
+  {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  margin-top:3%;
+}
+.p1, .p2
+  {
+  margin-top: 10%;
+  background-color:#fff;
+  width: 40%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+  display:flex;
+  flex-direction:column;
+  padding: 20px;
+}
+.p1
+  {
+  align-items: center;
+  text-align: center;
+  }
+.p2
+{
+  padding-left:50px;
+
+}
+input
+{
+  width: 500px;
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
+}
+button
+{
+  margin-top: 30px;
+  width: 150px;
+  height: 50px;
+}
+#btn1
+{
+  background-color: green;
+  border: 2;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+#btn1:hover {
+  background-color: YELLOW;
+  border: 2;
+  border-radius: 10px;
+  color:aliceblue;
+  box-shadow: darkblue;
+  cursor: pointer;
+}
+#btn1
+{background-color:green;
+border:2;
+border-radius:10px;
+color:skyblue;
+font-size:16px;
+cursor:pointer;
+boder-color:green;
+border-style:solid;
+border:2;
+border-color:green;
+}
+#btn1
+{
+  background-color: green;
+  border: 2;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+#btn1:hover {
+  background-color: darkgreen;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: darkgreen;
+  cursor: pointer;
+  font-family: Roboto, Arial;
+}
+#btn2
+{background-color: darkred;
+border-radius:10px;
+color:#fff;
+font-size:16px;
+cursor:pointer;
+
+}
+#btn2:hover {
+  background-color: red;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: red;
+  cursor: pointer;
+  font-family: Roboto,Arial;
+}
+
+
+footer{
+  background: #fff;
+  color: red;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+</style>
+
+<script>
+function submitform()
+{
+var fname=document.myform.fname.value;
+var lname=document.myform.lname.value;
+var addr=document.myform.addr.value;
+var cn=document.myform.cn.value;
+
+document.getElementById("d1").innerHTML = "Name: "+fname+" "+lname;
+document.getElementById("d2").innerHTML = "Address: "+addr+" ";
+document.getElementById("d3").innerHTML = "Contact Number: "+cn+" ";
+
+}
+function clearform()
+{
+document.getElementById("myform").reset();
+
+}
+</script>
+
+</head>
+<body align="center">
+ 
+  <div class="main"> 
+    <div class="p1"> <form name="myform" id="myform">
+        <h2>Enter Your Details</h2>
+        <input type="text" name="fname" placeholder="Enter Your First Name" required>
+        <br> <br>
+        <input type="text" name="lname" placeholder="Enter Your Last Name" required>
+        <br> <br>
+        <input type="email" name="addr" placeholder="Enter Your Email Address" required> 
+        <br> <br>
+        <input type="tel" name="cn" placeholder="Enter Your Contact Number" maxlength="11" required>
+        <br> <br>
+    </form>
+    <div class="btns">
+        <button id="btn1" onclick="submitform()"> SUBMIT</button>
+        <button id="btn2" onclick="clearform()" value="Reset Form"> CLEAR</button>
+    </div>
+  </div>
+  <div class="p2">
+    <h2>Your Information</h2>
+    <h3 id="d1"> </h3>
+    <h3 id="d2"> </h3>
+    <h3 id="d3"> </h3>
+  </div>
+  <footer><a href="./index.html">[ GO BACK ]</a></footer>
+</body>
+</html>
