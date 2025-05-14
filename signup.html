@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style type="text/css">
+body {
+    font-family: 'Segoe UI', Roboto, Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: #fff;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.container {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.container > form, 
+.container > div {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+
+footer {
+    background: #fff;
+    color: #333;
+    padding: 10px 0;
+    width: 100%;
+}
+
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: pink;
+}
+
+
+button:hover {
+    background-color: green;
+}
+
+
+    </style>
+</head>
+<body>
+    <header><h2>Welcome! <span style="color:#7000ff;">Please sign-up here.</span></h2></header>
+    <div class="container">
+        
+        <form id="signupform">
+        <table>
+            <tr><td><label for="username">Username :</label></td>
+            <td><input type="text" id="username" name="username"></td></tr>
+            <tr><td><label for="email">Email :</label></td>
+            <td><input type="email" id="email" name="email"></td></tr>
+            <tr><td><label for="password">Password :</label></td>
+            <td><input type="password" id="password" name="password"></td></tr>
+        </table>
+            <button type="submit">Sign Up</button><br><br>
+            <p>Already have an account? <a href="./index.html">Log In</a></p>
+        </form>
+        
+    </div>
+    <footer>&copy; BSIS 1C 2025 | CAYANES | GUARTE | BULAONG </footer>
+
+    <script type="text/javascript">
+
+    document.getElementById('signupform').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (username && email && password) {
+        
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+
+        console.log('Sign Up form submitted:', username, email, password);
+        alert("Your Credentials have been saved!");
+        window.location.href = './index.html';
+
+    } else {
+        alert('Please fill out all fields.');
+    }
+});
+
+
+    </script>
+
+</body>
+</html>
