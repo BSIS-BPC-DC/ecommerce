@@ -1,177 +1,135 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login Form</title>
-
-	<style type="text/css">
-
-*{
-	font-family: Roboto, Arial !important;
-}
-
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LOG IN</title>
+        <style type="text/css">
 body {
+    font-family: 'Segoe UI', Roboto, Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
     background: linear-gradient(45deg, #8e2de2, #4a00e0);
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
+    background-position: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+}
+
+
+.container {
+    flex: 1; 
+    display: flex;
     justify-content: center;
-	font-weight: 600;
-    margin-bottom: 2rem;
-    position: relative;
+    align-items: center;
+    padding: 40px;
 }
 
-#loginlogo {
-	width: 300px;
-	height: 300px;
-	padding: none;
-	margin: none;
+.container > form, 
+.container > div {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
 }
 
-#tocreate{
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-	text-decoration: none;
 
-}
-
-h3
-{
-	color: #fff;
-}
-.titulo{
-	font-weight: bold;
-}
-
-.container{
-	background-color: #fff;
-    min-width: 320px;
-    min-height: 40vh;
-	border-radius: 10px;
-	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-	display: flex;
-	flex-direction: column;
-	padding: 20px;
-	margin-bottom: 20px;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-    top: 50%;
-    left: 50%;
-	transform: translate(-50%, -50%);
-
-}
-
-.form{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	margin-top: 3%;
-	align-items: center;
-}
-
-.loginname{
-	display: flex;
-	flex-direction: column;
-	color: purple;
-}
-
-li{
-	list-style: none;
-}
-
-.submit{
-    margin-top: 2rem;
-    padding: 0.4rem;
+footer {
+    background: #fff;
+    color: #333;
+    padding: 10px 0;
     width: 100%;
-    background: linear-gradient(to left, #4776E6, #8e54e9);
-    cursor: pointer;
-    color: white;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    transition: all 0.3s ease;
 }
 
-.submit:hover{
-    background: green;
-    letter-spacing: 0.5px;
-	color: white;
-	border-color: white;
-	font-weight: bold;
-	border-radius: 6px;
+
+a {
+    color: green;
+    text-decoration: none;
 }
 
-	</style>
+a:hover {
+    background-color: pink;
+}
 
+
+button:hover {
+    background-color: green;
+}
+
+img{
+    width: 175px;
+    height: 175px;
+    padding: 0px;
+    margin: 0px;
+}
+</style>
 </head>
-<body>
 
-<div class="container">
+    <body>
+        <header><h2>BEST PRICES <span style="color:#7000ff;">TOP QUALITY</span></h2></header>
 
-	<img src="https://cdn.freebiesupply.com/logos/thumbs/2x/woocommerce-logo.png" alt="company logo" id="loginlogo">
+        <div class="container">
+            <form id="loginform">
+                <img src="./MONARCH.png">
+                <table>
+                <tr><td>
+                <label for="username">Username: </label></td>
+                <td><input type="text" id="username" name="username" placeholder="Enter your username"></td></tr><br>
+                
 
-	<h1 class="loginname">Hello! Welcome.</h1>
-	<p>Please login or create an account.</p>
+                <tr><td><label for="password">Password: </label></td>
+                <td><input type="password" id="password" name="password" placeholder="Enter your password"></td></tr>
+                </table>
+                <button type="submit">Log In</button>
+                <button type="reset">Clear</button>
+                <br>
 
-	<form name="login" onsubmit="return validateForm();" method="post">
-	<table>
-		<tr>
-			<td>
-		<label class="titulo" for="username">Username: </label></td><td><input class
-		class="username" type="text" name="username">
-	</td></tr>
-		<tr><td>
-		<label class="titulo" for="password">Password: </label></td><td><input class="
-		password" type="password" name="password"></td>
-	</table>
+                <p>Don't Have An Account? <a href="./signup.html"> Sign Up </a></p>
 
-			<a id="tocreate" href="./create.html">Create an account.</a>
-		<input type="button" name="submit" class="submit" value="Login" onclick="validate();">
+            </form>
+            
+           
+        </div>
 
-	</ul>
+        <footer>&copy; BSIS 1C 2025 | CAYANES | GUARTE | BULAONG </footer>
+        <script type="text/javascript">
+            document.getElementById('loginform').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-	</form>
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-</div>
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
 
-<script type="text/javascript">
-var count = 2;
-function validate() {
-	var user = document.login.username.value;
-	var password = document.login.password.value;
-	var valid = false;
-	var usernameArray = ["buyer"];
-	var passwordArray = ["shop1"];
-	
-	for (var i = 0; i < usernameArray.length; i++) {
-		if (user == usernameArray[i] && password == passwordArray[i]) {
-			valid = true;
-			break;
-		}
-	}
-
-	if (valid) {
-		alert("Login Was Successful !");
-		window.location.href = "./home.html";
-		return false;
-	}
-	var again ="tries";
-	if (count == 1)
-	{
-	again = "try"
-	}
-	if (count >= 1)
-	{
-	alert ("Wrong Password or Username !!!")
-	count--;
-	}
-}
-</script>
-
-</body>
+    if (username && password) {
+        if (username === storedUsername && password === storedPassword) {
+            alert('Log in successful!');
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = './home.html';
+        } else {
+            alert('Invalid username or password.');
+        }
+    } else {
+        alert('Please fill out all fields.');
+    }
+});
+        </script>
+    </body>
 </html>
